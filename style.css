@@ -14,7 +14,17 @@ body {
 
 @keyframes highlight {
 	from { right: 0px; }
-	to { right: 400px; }
+	to { right: 250px; }
+}
+
+@keyframes screech_in{
+	from {
+		left: 100px;
+
+	 }
+	to { left: 250px;
+		top: 450px;
+	 }
 }
 
 @keyframes rock {
@@ -26,11 +36,6 @@ body {
 @keyframes grow{
 	0% { width: 400px; }
 	100% { width: 600px; }
-}
-
-@keyframes billboard_slide {
-	from { right: 0px; }
-	to { right: 250px; }
 }
 
 #billboard_container div {
@@ -56,28 +61,34 @@ body {
 
 	z-index: -1;
 }
-.sliding {
 
-	animation: billboard_slide 5s forwards;
-	position: relative;
-	height: auto;
-	bottom: 206px;
 
-	z-index: -1;
-
-}
-
-#car {
+#car1 {
 	position: absolute;
 	top: 400px;
 	right: 0px;
 	width: 400px;
 }
 
+#car2 {
+	position: absolute;
+	top: 400px;
+	left: -200px;
+	width: 400px;
+}
+
 .car_go {
 	position: absolute;
 	top: 400px;
-	animation: highlight 5s forwards, grow 5s 1s forwards, rock 0.2s 18 forwards;
+	animation: highlight 2s forwards, grow 2s forwards, rock 0.2s 10 forwards;
+	width: 400px;
+}
+
+
+.car_2_go {
+	position: absolute;;
+	top: 400px;
+	animation: screech_in 0.5s 1.5s forwards;
 	width: 400px;
 }
 

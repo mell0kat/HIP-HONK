@@ -1,9 +1,15 @@
-const getAndPlayAudio = (rapper, rapperDivImg) => {
+const getAndPlayAudio = (rapper, instant = false, end=false) => {
 	const rapperNoise = document.querySelector(`audio#${rapper}`)
-	setTimeout(() => rapperNoise.play(), 4000)
 
-	rapperDivImg.className = 'sliding'
-	document.getElementById('car').className = 'car_go'
+	if (end){
+		rapperNoise.pause()
+		return
+	}
+	setTimeout(() => rapperNoise.play(), (instant ? 0 : 1750))
+
+	document.getElementById('car1').className = 'car_go'
+
+	document.getElementById('car2').className = 'car_2_go'
 
 }
 
@@ -11,8 +17,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	function respondToClick(rapper) {
 		const rapperDiv = document.getElementById(rapper)
 		const rapperDivImg = document.querySelectorAll(`#${rapper} img`)[1]
-		console.log(rapperDivImg)
-		rapperDiv.addEventListener('click', () => getAndPlayAudio(rapper, rapperDivImg))
+
+		rapperDiv.addEventListener('click', () => {
+			getAndPlayAudio('sputtering', true)
+			getAndPlayAudio(rapper)
+			setTimeout(() => getAndPlayAudio('sputtering', true, true), 2000)
+
+		})
 
 	}
 	respondToClick('dmx')
