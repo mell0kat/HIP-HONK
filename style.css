@@ -1,6 +1,5 @@
 body {
 	background: linear-gradient(to top, #F6A281, white)
-
 }
 
 #container {
@@ -12,19 +11,46 @@ body {
 	margin: 0 auto;
 }
 
-@keyframes highlight {
-	from { right: 0px; }
-	to { right: 250px; }
+#instructions {
+ 	position: absolute;
+ 	top: 2%;
+}
+
+#instructions div {
+	position: relative;
+	bottom: 200px;
+	left: 75px;
+	width: 175px;
+}
+
+
+@keyframes enter {
+	0% { right: 0px; }
+	50% { right: 250px; }
+	99% { right: 250px; }
+	100% {right: 0px;}
+}
+
+@keyframes grow{
+	0% { width: 400px; }
+	50% { width: 600px; }
+	99% { width: 600px; }
+	100% { width: 400px; }
 }
 
 @keyframes screech_in{
-	from {
+	0% {
 		left: 100px;
-
-	 }
-	to { left: 250px;
+	}
+	15% { left: 210px;
 		top: 450px;
-	 }
+	}
+	99% { left: 210px;
+		top: 450px;
+	}
+	100%{
+		left: -200px;
+	}
 }
 
 @keyframes rock {
@@ -33,10 +59,6 @@ body {
 	100% { transform: rotateZ(2deg); }
 }
 
-@keyframes grow{
-	0% { width: 400px; }
-	100% { width: 600px; }
-}
 
 #billboard_container div {
 	width: 250px;
@@ -45,8 +67,10 @@ body {
 }
 
 #billboard_container {
+	margin-top: 10%;
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-end;
 }
 
 #billboard img {
@@ -58,7 +82,6 @@ body {
 	position: relative;
 	height: auto;
 	bottom: 206px;
-
 	z-index: -1;
 }
 
@@ -80,17 +103,13 @@ body {
 .car_go {
 	position: absolute;
 	top: 400px;
-	animation: highlight 2s forwards, grow 2s forwards, rock 0.2s 10 forwards;
+	animation: enter 4s forwards, grow 4s forwards, rock 0.2s 8 forwards;
 	width: 400px;
 }
-
 
 .car_2_go {
 	position: absolute;;
 	top: 400px;
-	animation: screech_in 0.5s 1.5s forwards;
+	animation: screech_in 3s 1.5s forwards;
 	width: 400px;
 }
-
-
-
