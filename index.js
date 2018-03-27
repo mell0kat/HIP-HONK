@@ -1,3 +1,5 @@
+const rapperTags = ['dmx', 'kendrick', 'chance']
+
 const getAndPlayAudio = (rapper, instant = false, end=false) => {
 	const rapperNoise = document.querySelector(`audio#${rapper}`)
 
@@ -22,19 +24,24 @@ const getAndPlayAudio = (rapper, instant = false, end=false) => {
 
 }
 
+const scrollBack = (billboardElement) => {
+	billboardElement.classList.remove('scroll_up')
+}
+
+function respondToClick(rapper) {
+	const rapperDiv = document.querySelector(`#${rapper}`)
+	const billboardToScrollOut = rapperDiv.querySelector('.front')
+	const rapperDivImg = document.querySelectorAll(`#${rapper} img`)[1]
+
+	rapperDiv.addEventListener('click', () => {
+		getAndPlayAudio('sputtering', true)
+		getAndPlayAudio(rapper)
+		setTimeout(() => getAndPlayAudio('sputtering', true, true), 2000)
+		billboardToScrollOut.classList.add('scroll_up')
+		setTimeout(() => scrollBack(billboardToScrollOut), 2000)
+	})
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
-	function respondToClick(rapper) {
-		const rapperDiv = document.getElementById(rapper)
-		const rapperDivImg = document.querySelectorAll(`#${rapper} img`)[1]
-
-		rapperDiv.addEventListener('click', () => {
-			getAndPlayAudio('sputtering', true)
-			getAndPlayAudio(rapper)
-			setTimeout(() => getAndPlayAudio('sputtering', true, true), 2000)
-
-		})
-
-	}
-	respondToClick('dmx')
-	respondToClick('kendrick')
+	rapperTags.forEach(tag => respondToClick(tag))
 })

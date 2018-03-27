@@ -53,11 +53,6 @@ body {
 }
 
 
-#billboard_container div {
-	width: 250px;
-	overflow: hidden;
-	align-self: flex-start;
-}
 
 #billboard_container {
 	margin-top: 5%;
@@ -66,16 +61,31 @@ body {
 	justify-content: flex-end;
 }
 
-#billboard img {
-	width: 100%;
-	z-index: 1;
+#billboard_container div {
+	width: 250px;
+	height: 200px;
+	align-self: flex-start;
+	position: relative;
+	overflow: hidden;
+}
+
+#billboard_container img {
+	position: absolute;
+}
+
+#billboard_container .front {
+	z-index: -1;
+}
+
+#billboard_container .scroll_up {
+	transform: translateY(-100%);
+	transition: 1s;
 }
 
 .billboard_fill {
 	position: relative;
 	height: auto;
-	bottom: 206px;
-	z-index: -1;
+	z-index: -2;
 }
 
 #car1 {

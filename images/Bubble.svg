@@ -19,13 +19,14 @@
                 <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
                 <use stroke="#D8D8D8" stroke-width="1" fill="#F3EDED" fill-rule="evenodd" xlink:href="#path-1"></use>
             </g>
-            <text id="Click-on-your-favori" font-family="PlayfairDisplay-Regular, Playfair Display" font-size="12" font-weight="normal" fill="#000000">
-                <tspan x="55" y="74">Click on your favorite </tspan>
-                <tspan x="55" y="90">rapper’s image to hear </tspan>
-                <tspan x="55" y="106">what they have to say to </tspan>
-                <tspan x="55" y="122">the wack drivers of the </tspan>
-                <tspan x="55" y="138">world. And don’t forget to </tspan>
-                <tspan x="55" y="154">crank that volume!</tspan>
+            <text id="Click-on-your-favori" font-family="Aldrich" font-size="14" font-weight="normal" fill="#000000">
+                <tspan x="46" y="69">Click on your favorite </tspan>
+                <tspan x="46" y="82">rapper’s image to </tspan>
+                <tspan x="46" y="95">hear what they have </tspan>
+                <tspan x="46" y="108">to say to the wack </tspan>
+                <tspan x="46" y="121">drivers of the world. </tspan>
+                <tspan x="46" y="134">And don’t forget to </tspan>
+                <tspan x="46" y="147">crank that volume!</tspan>
             </text>
         </g>
     </g>
