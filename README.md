@@ -1,5 +1,6 @@
 # HIP-HONK
 **Revolutionizing the car horn market**
+![Alt text](hipHonk.jpg?raw=true "Hip Honk Website")
 
 ### Why?
 
